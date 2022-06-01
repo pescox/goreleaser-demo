@@ -1,5 +1,12 @@
 # This is an example .goreleaser.yml file with some sensible defaults.
 # Make sure to check the documentation at https://goreleaser.com
+project_name: goreleaser-demo
+env:
+  - GO111MODULE=on
+
+build:
+  env:
+    - CGO_ENABLED=0
 before:
   hooks:
     # You may remove this if you don't use go modules.
@@ -9,6 +16,8 @@ before:
 builds:
   - env:
       - CGO_ENABLED=0
+    main: main.go
+    binary: goreleaser-demo
     goos:
       - linux
       - windows
