@@ -127,7 +127,7 @@ dockers:
     - "--label=org.opencontainers.image.version={{.Version}}"
     - "--platform=linux/arm64"
 docker_manifests:
-  - name_template: 'pescox/goreleaser-demo:{{ .Major }}'
+  - name_template: 'pescox/goreleaser-demo:v{{ .Major }}'
     image_templates:
     - 'pescox/goreleaser-demo:v{{ .Major }}-amd64'
-    - 'pescox/goreleaser-demo:{{ .Major }}-arm64'
+    - 'pescox/goreleaser-demo:v{{ .Major }}-arm64'
